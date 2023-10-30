@@ -5,8 +5,26 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        text: {
+          DEFAULT: "#000000"
+        },
+
+        background: {
+          DEFAULT: "#ffffff"
+        }
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+    ({ addUtilities }) => {
+      addUtilities({
+        ".card": {
+          "@apply ": {}
+        },
+      })
+    }
+  ],
 }
 
