@@ -9,7 +9,7 @@ export default {
       colors: {
         'text': '#250604',
         'background': '#faf5f5',
-        'tertiary': '#F2EDED',
+        'tertiary': '#f2eded',
         'primary': '#af5550',
         'secondary': '#ecd6d5',
         'accent': '#da241b',
@@ -41,6 +41,14 @@ export default {
 
         ".card": {
           "@apply bg-tertiary round p-4": {}
+        },
+
+        ".title": {
+          "@apply text-lg font-semibold": {}
+        },
+
+        ".title": {
+          "@apply text-lg font-semibold": {}
         },
 
         ".button-primary": {
