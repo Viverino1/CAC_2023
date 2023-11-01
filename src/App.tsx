@@ -5,11 +5,12 @@ import FinancePage from "./pages/Finance/FinancePage"
 import TeamPage from "./pages/Team/TeamPage"
 import AuthPage from "./pages/Auth/AuthPage"
 import ProductPage from "./pages/Product/ProductPage"
+import AuthPage from "./pages/Auth/AuthPage"
 export default function App(){
   return(
     <div className="flex h-screen w-full">
       <Sidebar/>
-      <div className="bg-background fixed left-24 right-0 top-0 bottom-0 h-full">
+      <div className="w-full h-screen bg-background">
         <Routes>
           <Route path="/dashboard" element={<DashboardPage/>}/>
           <Route path="/finance" element={<FinancePage/>}/>
