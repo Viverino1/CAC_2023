@@ -27,8 +27,8 @@ const chartData = {
 
 
 import { Line } from "react-chartjs-2";
-import { Icon0Circle, PlusLg } from "react-bootstrap-icons";
-function FinancePage(props: { chartData: any }) {
+import { PlusLg } from "react-bootstrap-icons";
+function FinancePage() {
   return (
     <div className = "">
       <h1 className = "center p-1 text-3xl color-">Finance Manager</h1>

@@ -3,7 +3,6 @@ import Sidebar from "./components/Sidebar"
 import DashboardPage from "./pages/Dashboard/DashboardPage"
 import FinancePage from "./pages/Finance/FinancePage"
 import TeamPage from "./pages/Team/TeamPage"
-import AuthPage from "./pages/Auth/AuthPage"
 import ProductPage from "./pages/Product/ProductPage"
 import AuthPage from "./pages/Auth/AuthPage"
 export default function App(){
