@@ -75,4 +75,17 @@ export async function getTeamMembers(){
     teamMembers.push(doc.data() as TeamMember);
   });
   console.log(teamMembers);
+  return teamMembers;
+}
+
+export async function getProducts(){
+  const uid = auth.currentUser?.uid;
+  if(!uid) return;
+  const docs = await getDocs(collection(usersCol, uid, "products"));
+  const products: Product[] = [];
+  docs.forEach(doc => {
+    products.push(doc.data() as Product);
+  })
+  console.log(products);
+  return products
 }
