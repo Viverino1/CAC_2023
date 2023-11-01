@@ -1,13 +1,17 @@
 import { ReactElement } from "react";
 import { CurrencyDollar, GraphUp, GraphUpArrow, HouseDoorFill, PersonBadgeFill } from "react-bootstrap-icons";
+import { useQuery } from "react-query";
 import { useNavigate, useLocation } from "react-router-dom";
+import { queryClient } from "../main";
 
 export default function Sidebar(){
+  const user = queryClient.getQueryData('currentUser') as User;
+  
   return(
     <div className="bg-tertiary w-24 p-4 space-y-4 fixed left-0 top-0 bottom-0 z-30">
       <Icon 
-        icon={<img src="https://lh3.googleusercontent.com/ogw/AGvuzYb8Az9mueXWBCrZlm6FogE9a6D-WAWivPYEKrkB7g=s32-c-mo" className="w-10 rounded-full"/>}
-        text="Account"
+        icon={<img src={user.photoURL} className="w-10 rounded-full"/>}
+        text={user.userName}
         link="auth"
       />
 

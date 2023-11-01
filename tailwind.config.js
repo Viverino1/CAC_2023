@@ -13,7 +13,7 @@ export default {
         'primary': '#af5550',
         'secondary': '#ecd6d5',
         'accent': '#da241b',
-       }          
+       }  
     },
   },
   plugins: [
