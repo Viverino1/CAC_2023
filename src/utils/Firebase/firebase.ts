@@ -89,3 +89,15 @@ export async function getProducts(){
   console.log(products);
   return products
 }
+
+export async function addProduct(){
+  const uid = auth.currentUser?.uid;
+  if(!uid) return;
+  const colRef = collection(usersCol, uid, "products")
+  setDoc(colRef)
+  docs.forEach(doc => {
+    products.push(doc.data() as Product);
+  })
+  console.log(products);
+  return products
+}
