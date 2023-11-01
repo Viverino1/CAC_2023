@@ -1,10 +1,10 @@
 import { ReactElement } from "react";
-import { CurrencyDollar, GraphUp, HouseDoorFill, PersonBadgeFill } from "react-bootstrap-icons";
+import { CurrencyDollar, GraphUp, GraphUpArrow, HouseDoorFill, PersonBadgeFill } from "react-bootstrap-icons";
 import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Sidebar(){
   return(
-    <div className="bg-tertiary w-24 p-4 space-y-4">
+    <div className="bg-tertiary w-24 p-4 space-y-4 fixed left-0 top-0 bottom-0 z-30">
       <Icon 
         icon={<img src="https://lh3.googleusercontent.com/ogw/AGvuzYb8Az9mueXWBCrZlm6FogE9a6D-WAWivPYEKrkB7g=s32-c-mo" className="w-10 rounded-full"/>}
         text="Account"
@@ -27,6 +27,12 @@ export default function Sidebar(){
         icon={<PersonBadgeFill size={25}/>}
         text="Team"
         link="team"
+      />
+
+      <Icon 
+        icon={<GraphUpArrow size={25}/>}
+        text="Product"
+        link="product"
       />
     </div>
   )
