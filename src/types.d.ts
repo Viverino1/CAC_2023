@@ -1,8 +1,8 @@
 type Task = {
-start: number,
-end: number,
-title: string,
-description: string,
+Start: number,
+End: number,
+Title: string,
+Description: string,
 }
 
 type Status = "Unstarted" | "In Progress:" | "Complete";
