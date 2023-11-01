@@ -20,7 +20,23 @@ export default {
     ({ addUtilities }) => {
       addUtilities({
         ".round": {
-          "@apply rounded-xl border-2 border-secondary": {}
+          "@apply rounded-xl": {}
+        },
+
+        ".transition": {
+          "@apply transition-all duration-200": {}
+        },
+
+        ".center": {
+          "@apply flex justify-center items-center": {}
+        },
+
+        ".card-primary": {
+          "@apply bg-primary round p-4": {}
+        },
+
+        ".card-secondary": {
+          "@apply bg-secondary round p-4": {}
         },
 
         ".card": {
@@ -31,9 +47,21 @@ export default {
           "@apply text-lg font-semibold": {}
         },
 
-        // ".card-primary": {
-        //   "@apply bg-tertiary round p-4": {}
-        // },
+        ".title": {
+          "@apply text-lg font-semibold": {}
+        },
+
+        ".button-primary": {
+          "@apply !py-2 card-primary outline-none text-background": {}
+        },
+
+        ".button-secondary": {
+          "@apply !py-2 card-secondary outline-none": {}
+        },
+
+        ".button": {
+          "@apply !py-2 card outline-none": {}
+        },
       })
     }
   ],
