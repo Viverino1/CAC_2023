@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { PlusLg, Trash3Fill, X } from "react-bootstrap-icons";
-import { queryClient } from "../../main";
 import { useQuery } from "react-query";
 import { getProducts } from "../../utils/Firebase/firebase";
 
@@ -45,15 +44,10 @@ export default function ProductPage(){
             </div>
           </div>
         ))}
-        <div className="flex space-x-4">
           <button onClick={() => setIsProduct(true)} className="button-secondary flex space-x-2">
             <PlusLg size={25}/>
             <p>New Product</p>
           </button>
-          <button onClick={() => {
-
-          }} className="button-primary">Save</button>
-        </div>
       </div>
     </div>
   )

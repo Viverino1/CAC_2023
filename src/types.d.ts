@@ -14,6 +14,7 @@ type Task = {
 type Product = {
   name: string,
   stock: number,
+  id: string,
 }
 
 type TeamMember = {
