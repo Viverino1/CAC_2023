@@ -22,11 +22,15 @@ export default function ProductPage(){
       <div className="text-5xl font-bold text-primary">Products</div>
       <div className="space-y-4 mt-4">
         {sampleData.map((key) => (
-          <div className="flex w-full space-x-4">
-            <div key={key.name} className="card w-full h-16 text-xl">
-              <div>{key.name}</div>
+          <div key={key.name} className="w-full flex space-x-4">
+            <div className="h-full w-full card !p-2 md:flex justify-between items-center">
+              <div className="text-xl font-bold px-2">{key.name}</div>
+              <div>
+                Stock:
+                <input type="number" className="ml-2 w-32 h-full card-secondary"></input>
+              </div>
             </div>
-            <div className="h-16 center text-accent round bg-tertiary transition hover:bg-secondary aspect-square">
+            <div className="w-16 aspect-square card hover:card-secondary transition center text-accent">
               <Trash3Fill size={25}/>
             </div>
           </div>
