@@ -36,11 +36,11 @@ export default {
         },
 
         ".card-secondary": {
-          "@apply bg-secondary round p-4": {}
+          "@apply bg-secondary round p-4 placeholder-primary": {}
         },
 
         ".card": {
-          "@apply bg-tertiary round p-4": {}
+          "@apply bg-tertiary round p-4 placeholder-primary": {}
         },
 
         ".title": {
