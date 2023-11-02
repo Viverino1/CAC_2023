@@ -23,7 +23,7 @@ export default function DashboardPage(){
           <div className="card w-full h-64 center flex-col">
             <h2 className="">Lowest Stocked Product</h2>
             <h1 className="font-bold text-5xl">Blueberries</h1>
-            <h2 className="">Restock <Soon></Soon></h2>
+            <h2 className="">Restock</h2>
           </div>
           <div className="card w-full h-64 center flex-col">
             <h2 className="">Total Weekly Profit</h2>
