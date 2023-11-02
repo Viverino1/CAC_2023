@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { PlusLg, Trash3Fill, X } from "react-bootstrap-icons";
+import { PlusLg, Save2, Trash3Fill, X } from "react-bootstrap-icons";
 import { useQuery } from "react-query";
-import { getProducts } from "../../utils/Firebase/firebase";
+import { addProduct, deleteProduct, getProducts } from "../../utils/Firebase/firebase";
+import { getValue } from "../../utils/helpers";
 
 export default function ProductPage(){
   const [isProduct, setIsProduct] = useState(false);
@@ -21,10 +22,13 @@ export default function ProductPage(){
             <button onClick={() => setIsProduct(false)} className="center text-accent bg-transparent round transition hover:bg-primary hover:text-background"><X size={35}/></button>
           </div>
           <div className="flex space-x-4">
-            <input type="text" placeholder="Product Name" className="card"/>
-            <input type="text" placeholder="Current Stock" className="card"/>
+            <input type="text" placeholder="Product Name" className="card" id="name"/>
           </div>
-          <button className="button-primary">Save</button>
+          <button 
+          onClick={() => {
+            addProduct({name: getValue("name"), stock: 0, id: ""});
+          }}
+          className="button-primary">Save</button>
         </div>
       </div>
 
@@ -39,9 +43,14 @@ export default function ProductPage(){
                 <input type="number" className="ml-2 w-32 h-full card-secondary" defaultValue={key.stock}></input>
               </div>
             </div>
-            <div className="w-16 aspect-square card hover:card-secondary transition center text-accent">
+            <button className="w-16 aspect-square card hover:card-secondary transition center text-accent">
+              <Save2 size={25}/>
+            </button>
+            <button className="w-16 aspect-square card hover:card-secondary transition center text-accent" onClick={() => {
+              deleteProduct(key.id);
+            }}>
               <Trash3Fill size={25}/>
-            </div>
+            </button>
           </div>
         ))}
           <button onClick={() => setIsProduct(true)} className="button-secondary flex space-x-2">

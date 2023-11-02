@@ -1,7 +1,8 @@
 import { PlusLg } from "react-bootstrap-icons"
 import Task from "../../components/Task"
 import { getInitials } from "../../utils/helpers"
-import { getTeamMembers } from "../../utils/Firebase/firebase"
+import { useQuery } from "react-query"
+import { getProducts } from "../../utils/Firebase/firebase"
 
 const teamMembers: TeamMember[] = [
   {
@@ -16,7 +17,7 @@ const teamMembers: TeamMember[] = [
   }
 ]
 
-const tasks: Task[] = [
+export const tasks: Task[] = [
   {
     startTime: 1698854411000,
     endTime: 1698894411000,
