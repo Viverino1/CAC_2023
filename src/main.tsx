@@ -4,7 +4,6 @@ import App from './App.tsx'
 import './App.css'
 import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { getProducts, getTeamMembers } from './utils/Firebase/firebase.ts';
 
 export const queryClient = new QueryClient({
   defaultOptions: {

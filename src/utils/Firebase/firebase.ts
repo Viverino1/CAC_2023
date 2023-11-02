@@ -1,7 +1,7 @@
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { FirebaseApp, initializeApp } from "firebase/app";
 
-import { CollectionReference, DocumentData, collection, doc, getDoc, setDoc, getFirestore, query, where, getDocs } from "firebase/firestore";
+import { CollectionReference, DocumentData, collection, doc, getDoc, setDoc, getFirestore, query, where, getDocs, addDoc, deleteDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyABAuWNrUrhRdDX0HKxkKYPTv9k_b0tHDo",
@@ -90,14 +90,17 @@ export async function getProducts(){
   return products
 }
 
-export async function addProduct(){
+export async function addProduct(product: Product){
   const uid = auth.currentUser?.uid;
   if(!uid) return;
   const colRef = collection(usersCol, uid, "products")
-  setDoc(colRef)
-  docs.forEach(doc => {
-    products.push(doc.data() as Product);
-  })
-  console.log(products);
-  return products
+  const id = (await addDoc(colRef, product)).id;
+  await setDoc(doc(colRef, id), {id: id}, {merge: true});
+}
+
+export async function deleteProduct(id: string){
+  const uid = auth.currentUser?.uid;
+  if(!uid) return;
+  const colRef = collection(usersCol, uid, "products")
+  deleteDoc(doc(colRef, id));
 }
